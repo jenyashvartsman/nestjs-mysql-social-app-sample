@@ -1,8 +1,8 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { IsString, MaxLength, MinLength } from 'class-validator';
 
-@Entity()
-export class Post extends BaseEntity {
+@Entity({ name: 'post' })
+export class PostEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
