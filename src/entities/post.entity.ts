@@ -12,9 +12,8 @@ export class PostEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 255 })
+  @Column('text')
   @MinLength(1)
-  @MaxLength(255)
   @IsString()
   post: string;
 

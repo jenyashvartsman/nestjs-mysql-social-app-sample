@@ -4,7 +4,7 @@ import { define } from 'typeorm-seeding';
 
 define(PostEntity, (faker: typeof Faker) => {
   const post = new PostEntity();
-  post.post = faker.lorem.words(5);
+  post.post = faker.lorem.paragraph();
   post.createdAt = faker.date.recent();
   return post;
 });
