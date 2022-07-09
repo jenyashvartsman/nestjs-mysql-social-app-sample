@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "nestjs-mysql-social-app-sample",
+  "password": "nestjs-mysql-social-app-sample",
+  "database": "nestjs-mysql-social-app-sample",
+  "entities": ["src/entities/**/*{.ts,.js}"],
+  "synchronize": true,
+  "seeds": ["src/db/seeds/**/*{.ts,.js}"],
+  "factories": ["src/db/factories/**/*{.ts,.js}"]
+}

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm/dist/typeorm.module';
-import { PostModule } from './post/post.module';
+import { PostModule } from './api/post/post.module';
 
 @Module({
   imports: [
@@ -11,7 +11,7 @@ import { PostModule } from './post/post.module';
       username: 'nestjs-mysql-social-app-sample',
       password: 'nestjs-mysql-social-app-sample',
       database: 'nestjs-mysql-social-app-sample',
-      entities: [__dirname + '/../**/*.entity.js'],
+      entities: ['/src/entities/**/*{.ts,.js}'],
       synchronize: true,
     }),
     PostModule,

@@ -8,8 +8,8 @@ import {
   Delete,
   Patch,
 } from '@nestjs/common';
-import { PostDto } from './post.dto';
-import { PostEntity } from './post.entity';
+import { PostDto } from '../../dtos/post.dto';
+import { PostEntity } from '../../entities/post.entity';
 import { PostService } from './post.service';
 
 @Controller('post')

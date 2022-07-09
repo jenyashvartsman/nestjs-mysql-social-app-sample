@@ -1,5 +1,5 @@
 import { Exclude, Expose } from 'class-transformer';
-import { IsNumber, IsString, IsOptional } from 'class-validator';
+import { IsNumber, IsString, IsOptional, IsDate } from 'class-validator';
 
 @Exclude()
 export class PostDto {
@@ -11,4 +11,8 @@ export class PostDto {
   @Expose()
   @IsString()
   post: string;
+
+  @Expose()
+  @IsDate()
+  createdAt: Date;
 }
