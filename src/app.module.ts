@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm/dist/typeorm.module';
 import { PostModule } from './api/post/post.module';
+import { UserModule } from './api/user/user.module';
 
 @Module({
   imports: [
@@ -14,11 +15,13 @@ import { PostModule } from './api/post/post.module';
         username: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
-        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        // entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        autoLoadEntities: true,
         synchronize: false,
       }),
     }),
     PostModule,
+    UserModule,
   ],
 })
 export class AppModule {}

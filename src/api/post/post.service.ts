@@ -14,6 +14,7 @@ export class PostService {
 
   async getPosts(): Promise<PostDto[]> {
     const posts = await this.postRepository.find();
+    console.log(posts);
     return posts.map((post) => plainToClass(PostDto, post));
   }
 

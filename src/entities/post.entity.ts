@@ -3,9 +3,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { IsString, MaxLength, MinLength } from 'class-validator';
+import { IsString, MinLength } from 'class-validator';
+import { UserEntity } from './user.entity';
 
 @Entity({ name: 'posts' })
 export class PostEntity extends BaseEntity {
@@ -17,6 +19,10 @@ export class PostEntity extends BaseEntity {
   @IsString()
   post: string;
 
+  @Column()
   @CreateDateColumn()
   createdAt: Date;
+
+  @ManyToOne(() => UserEntity, (user) => user.posts, { lazy: true })
+  user: UserEntity;
 }

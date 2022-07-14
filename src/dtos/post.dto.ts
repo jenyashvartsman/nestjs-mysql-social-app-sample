@@ -15,4 +15,7 @@ export class PostDto {
   @Expose()
   @IsDate()
   createdAt: Date;
+
+  @Expose()
+  userId: number;
 }
